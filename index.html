@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Gestação</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url('babyboard.jpg'); /* Substitua 'sua-imagem.jpg' pelo caminho da sua imagem */
+            background-size: cover; /* Ajusta o tamanho da imagem para cobrir toda a área do corpo */
+            background-position: center; /* Centraliza a imagem */
+            background-repeat: no-repeat; /* Impede a repetição da imagem */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora Gestacional</h1>
+        <form id="calcularForm">
+            <label for="nome">Qual o seu nome?</label>
+            <input type="text" id="nome" name="nome" required>
+            <label for="data">Data do último período menstrual:</label> 
+            <input type="text" id="data" name="data" placeholder="dd/mm/aaaa" maxlength="10" required>
+            <button type="submit">Calcular aqui!</button>
+        </form>
+    </div>
+
+    <div class="container" id="resultadoContainer" style="display: none;">
+        <h2>Resultado</h2>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        document.getElementById('calcularForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita o envio do formulário
+
+            var nome = document.getElementById('nome').value;
+            var dataStr = document.getElementById('data').value;
+
+            // Verifica se a data é válida
+            var dataParts = dataStr.split('/');
+            var dia = parseInt(dataParts[0], 10);
+            var mes = parseInt(dataParts[1], 10) - 1; // Os meses em JavaScript começam do zero (janeiro é 0)
+            var ano = parseInt(dataParts[2], 10);
+            var data = new Date(ano, mes, dia);
+
+            // Calcula a diferença de dias
+            var hoje = new Date();
+            var diff = Math.floor((hoje - data) / (1000 * 60 * 60 * 24));
+
+            // Calcula semanas e meses
+            var semanas = Math.floor(diff / 7);
+            var meses = Math.floor(semanas / 4);
+
+            // Exibe o resultado
+            var resultado = nome + ", você está com " + semanas + " semanas e no " + meses + "º mês da sua gestação 🍼";
+            document.getElementById('resultado').innerText = resultado;
+            document.getElementById('resultadoContainer').style.display = 'block';
+        });
+
+        // Adiciona as barras automaticamente enquanto o usuário digita
+        document.getElementById('data').addEventListener('input', function() {
+            var dataInput = this.value;
+            var formattedData = formatarData(dataInput);
+            this.value = formattedData;
+        });
+
+        // Função para formatar a data com barras
+        function formatarData(data) {
+            var formattedData = '';
+            if (data.length === 2 || data.length === 5) {
+                formattedData = data + '/';
+            } else if (data.length > 10) {
+                formattedData = data.substr(0, 10);
+            } else {
+                formattedData = data;
+            }
+            return formattedData;
+        }
+    </script>
+</body>
+</html>
