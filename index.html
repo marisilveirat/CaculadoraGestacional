@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-image: url('babyboard.jpg'); /* Substitua 'sua-imagem.jpg' pelo caminho da sua imagem */
-            background-size: cover; /* Ajusta o tamanho da imagem para cobrir toda a área do corpo */
-            background-position: center; /* Centraliza a imagem */
-            background-repeat: no-repeat; /* Impede a repetição da imagem */
+            background-image: url('babyboard.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
         }
     </style>
 </head>
@@ -41,32 +41,27 @@
             // Verifica se a data é válida
             var dataParts = dataStr.split('/');
             var dia = parseInt(dataParts[0], 10);
-            var mes = parseInt(dataParts[1], 10) - 1; // Os meses em JavaScript começam do zero (janeiro é 0)
+            var mes = parseInt(dataParts[1], 10) - 1; 
             var ano = parseInt(dataParts[2], 10);
             var data = new Date(ano, mes, dia);
 
-            // Calcula a diferença de dias
             var hoje = new Date();
             var diff = Math.floor((hoje - data) / (1000 * 60 * 60 * 24));
 
-            // Calcula semanas e meses
             var semanas = Math.floor(diff / 7);
             var meses = Math.floor(semanas / 4);
 
-            // Exibe o resultado
             var resultado = nome + ", você está com " + semanas + " semanas e no " + meses + "º mês da sua gestação 🍼";
             document.getElementById('resultado').innerText = resultado;
             document.getElementById('resultadoContainer').style.display = 'block';
         });
 
-        // Adiciona as barras automaticamente enquanto o usuário digita
         document.getElementById('data').addEventListener('input', function() {
             var dataInput = this.value;
             var formattedData = formatarData(dataInput);
             this.value = formattedData;
         });
-
-        // Função para formatar a data com barras
+        
         function formatarData(data) {
             var formattedData = '';
             if (data.length === 2 || data.length === 5) {
