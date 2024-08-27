@@ -1,3 +1,12 @@
-# CaculadoraGestacional
-Feito com um pouco de conhecimento nas principais linguagens de programação, tive um pouco de dificuldade com Java porque a foi a linguagem que aprendi na marra em 3 meses de curso, tenho ainda maior facilidade com HTML e CSS e tive que fazer alguns testes de cálculos semanais com a ajuda do Chat GPT para poder entender o melhor funcionamento do próprio cálculo.
-Meu plano incial era utilizar Python em vez de Java, mas realmente me deu uma dorzinha de cabeça trabalhar com a Flask e preferi ir para a zona mais segura.
+### Calculadora Gestacional
+Este projeto é uma Calculadora Gestacional, desenvolvida como parte de minha jornada de aprendizado em programação. O objetivo é fornecer uma ferramenta simples e eficaz para calcular a idade gestacional com base em dados inseridos pelo usuário.
+
+### Motivação
+Durante o desenvolvimento deste projeto, enfrentei alguns desafios, especialmente ao trabalhar com Java, uma linguagem que aprendi intensivamente em um curso de três meses. Embora eu tenha maior familiaridade com HTML e CSS, a implementação dos cálculos gestacionais exigiu um esforço extra, e contei com o suporte do ChatGPT para validar e refinar os cálculos semanais.
+
+Inicialmente, considerei usar Python com Flask para o backend. No entanto, após algumas dificuldades iniciais, optei por trabalhar com Java, uma escolha mais segura para mim no contexto do projeto.
+
+### Tecnologias Utilizadas
+Java: Utilizado para a lógica de cálculo gestacional.
+HTML/CSS: Usados para construir a interface do usuário.
+JavaScript: Integrado para interatividade na interface.
