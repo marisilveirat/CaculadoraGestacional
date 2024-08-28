@@ -7,6 +7,7 @@ Durante o desenvolvimento deste projeto, enfrentei alguns desafios, especialment
 Inicialmente, considerei usar Python com Flask para o backend. No entanto, após algumas dificuldades iniciais, optei por trabalhar com Java, uma escolha mais segura para mim no contexto do projeto.
 
 ### Tecnologias Utilizadas
-Java: Utilizado para a lógica de cálculo gestacional.
-HTML/CSS: Usados para construir a interface do usuário.
-JavaScript: Integrado para interatividade na interface.
+- Java: Utilizado para a lógica de cálculo gestacional.
+- HTML/CSS: Usados para construir a interface do usuário.
+- JavaScript: Integrado para interatividade na interface.
+- IDE VSCode para desenvolvimento.
